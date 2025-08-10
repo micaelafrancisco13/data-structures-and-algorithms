@@ -18,6 +18,7 @@
 
     <modules>
         <module>neetcode</module>
+        <module>company-assessments</module>
     </modules>
 
     <dependencyManagement>
