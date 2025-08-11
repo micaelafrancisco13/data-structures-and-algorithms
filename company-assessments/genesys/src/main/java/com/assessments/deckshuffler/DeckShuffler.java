@@ -1,34 +1,24 @@
 package com.assessments.deckshuffler;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class DeckShuffler {
+    private static final List<Card> deck = new ArrayList<>();
+    private static final List<Suit> suits = List.of(Suit.values());
+    private static final List<Rank> ranks = List.of(Rank.values());
+
     public static void main(String[] args) {
         // 1. Create the deck
-        // ArrayList preserves insertion order and does not sort by default.
-        List<Card> deck = new ArrayList<>();
-        for (Suit suit : Suit.values()) {
-            for (Rank rank : Rank.values()) {
+        for (Suit suit : suits)
+            for (Rank rank : ranks)
                 deck.add(new Card(rank, suit));
-            }
-        }
 
-        System.out.println("--- Original, Natural Ordered Deck ---");
-        System.out.println(deck.getFirst()); // ACE of CLUBS
-        System.out.println(deck.get(51)); // KING of SPADES
-        System.out.println("Deck size: " + deck.size());
-
-        // 2. Shuffle the deck
-        Collections.shuffle(deck);
-
-        System.out.println("\n--- Shuffled Deck ---");
-        System.out.println("Top card: " + deck.getFirst()); // A random card
-        System.out.println("Bottom card: " + deck.get(51)); // Another random card
+        // 2. Shuffle the deck of cards
+        shuffle(deck);
 
         // 3. Give each player a card
-        List<Player> players = new ArrayList<>(3);
+        List<Player> players = new ArrayList<>();
         for (int count = 1; count <= 5; ++count) {
             var player = new Player();
             player.setId(count);
@@ -58,5 +48,15 @@ public class DeckShuffler {
         });
 
         System.out.println("--- End of Game ---");
+    }
+
+    private static <T> void shuffle(List<T> list) {
+        for (int i = 0; i < list.size(); ++i) {
+            int randomIndex = i + (int) (Math.random() * (list.size() - i));
+            T current = list.get(i);
+            T toSwap = list.get(randomIndex);
+            list.set(randomIndex, current);
+            list.set(i, toSwap);
+        }
     }
 }
