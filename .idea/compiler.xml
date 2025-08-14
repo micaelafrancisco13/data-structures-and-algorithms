@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="genesys" />
         <module name="neetcode" />
+        <module name="akkodis" />
       </profile>
     </annotationProcessing>
   </component>
