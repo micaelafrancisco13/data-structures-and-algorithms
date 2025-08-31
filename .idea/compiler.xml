@@ -10,6 +10,7 @@
         <module name="genesys" />
         <module name="neetcode" />
         <module name="akkodis" />
+        <module name="yondu" />
       </profile>
     </annotationProcessing>
   </component>
