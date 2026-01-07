@@ -1,4 +1,4 @@
-package com.section.beginner.linkedlists;
+package com.section.beginner.linkedlists.queues;
 
 import java.util.Deque;
 import java.util.LinkedList;

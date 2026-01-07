@@ -1,4 +1,4 @@
-package com.section.beginner.linkedlists;
+package com.section.beginner.linkedlists.doubly;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

@@ -1,4 +1,4 @@
-package com.section.beginner.linkedlists;
+package com.section.beginner.linkedlists.doubly;
 
 import java.util.ArrayList;
 import java.util.List;
